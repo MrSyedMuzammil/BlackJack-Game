@@ -28,9 +28,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: aquamarine;
-  padding: 2rem;
-  width: 40vw;
-  height: 40vh;
+  width: 40%;
+  height: 50%;
   border-radius: 10px;
   box-shadow: 0 0 10px solid white;
   gap: 1rem;
@@ -65,4 +64,16 @@ body {
 
 p {
   color: white;
+}
+
+.start-btn {
+  padding: 1rem 2rem;
+  background-color: #b21f1f;
+  color: white;
+  border-radius: 0.5rem;
+  border: 0.1px solid white;
+}
+.start-btn:hover,
+.start-btn:focus {
+  background-color: #d30e0ed6;
 }
