@@ -9,6 +9,9 @@ let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
 function startGame() {
+  isAlive = true; // Add this line to start the game
+  let firstCard = getRandomCard();
+  let secondCard = getRandomCard();
   renderGame();
 }
 
@@ -24,11 +27,6 @@ function getRandomCard() {
 }
 
 function renderGame() {
-  let firstCard = getRandomCard();
-  let secondCard = getRandomCard();
-  let cards = [firstCard, secondCard];
-  let sum = firstCard + secondCard;
-
   cardsEl.textContent = "Cards: ";
   for (let i = 0; i < cards.length; i++) {
     cardsEl.textContent += ` ${cards[i]}`;
@@ -48,9 +46,11 @@ function renderGame() {
 }
 
 function newCard() {
-  let card = getRandomCard();
-  sum += card;
-  cards.push(card);
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
 
-  renderGame();
+    renderGame();
+  }
 }
