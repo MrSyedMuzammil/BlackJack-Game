@@ -2,6 +2,7 @@ let firstCard = 7;
 let secondCard = 13;
 let sum = firstCard + secondCard;
 message = "";
+let messageEl = document.getElementById("message-el");
 
 function startGame() {
   if (sum === 21) {
@@ -11,5 +12,5 @@ function startGame() {
   } else {
     message = `You lost badly 🥴`;
   }
-  console.log(message);
+  messageEl.textContent = message;
 }
