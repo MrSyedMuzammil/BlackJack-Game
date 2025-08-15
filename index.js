@@ -7,6 +7,10 @@ let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
 function startGame() {
+  renderGame();
+}
+
+function renderGame() {
   cardsEl.textContent = `Cards: ${firstCard} ${secondCard}`;
   sumEl.textContent = `Sum: ${sum}`;
   if (sum === 21) {
@@ -17,4 +21,11 @@ function startGame() {
     message = `You lost badly 🥴`;
   }
   messageEl.textContent = message;
+}
+
+function newCard() {
+  let card = 7;
+  sum += card;
+
+  renderGame();
 }
