@@ -2,11 +2,20 @@ let cards = [];
 let sum = 0;
 let isAlive = false;
 let hasBlackJack = false;
-
-message = "";
+let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
+
+let player = {
+  name: "Syed Muzammil",
+  chips: `$140`,
+};
+
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = `${player.name} : ${player.chips}`;
+
+document.getElementById("start-btn").addEventListener("click");
 
 function startGame() {
   isAlive = true; // Add this line to start the game
