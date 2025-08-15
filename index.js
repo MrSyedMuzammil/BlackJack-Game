@@ -1,5 +1,6 @@
 let firstCard = 7;
 let secondCard = 13;
+let cards = [firstCard, secondCard];
 let sum = firstCard + secondCard;
 message = "";
 let messageEl = document.getElementById("message-el");
@@ -11,7 +12,11 @@ function startGame() {
 }
 
 function renderGame() {
-  cardsEl.textContent = `Cards: ${firstCard} ${secondCard}`;
+  cardsEl.textContent = "Cards: ";
+  for (let i = 0; i < cards.length; i++) {
+    cardsEl.textContent += ` ${cards[i]}`;
+  }
+
   sumEl.textContent = `Sum: ${sum}`;
   if (sum === 21) {
     message = `You Win 🥳. You've got Blackjack!`;
@@ -26,6 +31,7 @@ function renderGame() {
 function newCard() {
   let card = 7;
   sum += card;
+  cards.push(card);
 
   renderGame();
 }
