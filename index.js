@@ -3,8 +3,10 @@ let secondCard = 13;
 let sum = firstCard + secondCard;
 message = "";
 let messageEl = document.getElementById("message-el");
+let sumEl = document.getElementById("sum-el");
 
 function startGame() {
+  sumEl.textContent = `Sum: ${sum}`;
   if (sum === 21) {
     message = `You Win 🥳. You've got Blackjack!`;
   } else if (sum < 21) {
